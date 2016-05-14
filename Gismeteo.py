@@ -1,12 +1,16 @@
-import urllib.request
+import requests
 from bs4 import BeautifulSoup
 
+url = "https://www.gismeteo.ru/"
+
+
 def get_html(url):
-    response = urllib.request.urlopen(url)
-    return response.read()
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.0; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0'}
+    r = requests.get(url, headers=headers)
+    return r.text
 
 
 def main():
-    print(get_html('https://www.gismeteo.ru/'))
+    print(get_html(url))
 
 print(main())
