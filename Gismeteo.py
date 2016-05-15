@@ -14,6 +14,8 @@ def parse(html):
     print ('Город:' , h2.text)
     dd = soup.find("dd",class_ = "value m_temp c")
     print ('Температура:' , dd.text)
+    div = soup.find('div', class_ = 'wicon hum')
+    print(div.text)
 
 def main():
     parse(get_html(url))
