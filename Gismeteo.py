@@ -11,9 +11,9 @@ def get_html(url):
 def parse(html):
     soup = BeautifulSoup(html)
     h2 = soup.find("h2", class_ = "typeC")
-    print (h2.prettify())
+    print (h2.text)
     dd = soup.find("dd",class_ = "value m_temp c")
-    print (dd.prettify())
+    print (dd.text)
 
 def main():
     parse(get_html(url))
